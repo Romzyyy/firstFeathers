@@ -1,0 +1,13 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public/",
+  "origins": [
+    "http://localhost:3030"
+  ],
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "1mongodb+srv://fijay0117:<password>@cluster0.4qlsggy.mongodb.net/?retryWrites=true&w=majority"
+}
