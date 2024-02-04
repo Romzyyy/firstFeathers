@@ -9,7 +9,7 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "1mongodb+srv://fijay0117:<password>@cluster0.4qlsggy.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb": "mongodb://localhost:27017/firstFeathers",
   "authentication": {
     "entity": "user",
     "service": "users",
