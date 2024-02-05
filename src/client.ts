@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { todoClient } from './services/todos/todos.shared'
+export type { Todo, TodoData, TodoQuery, TodoPatch } from './services/todos/todos.shared'
+
 import { messageClient } from './services/message/message.shared'
 export type { Message, MessageData, MessageQuery, MessagePatch } from './services/message/message.shared'
 
@@ -38,5 +41,6 @@ export const createClient = <Configuration = any,>(
 
   client.configure(userClient)
   client.configure(messageClient)
+  client.configure(todoClient)
   return client
 }
