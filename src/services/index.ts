@@ -1,3 +1,4 @@
+import { value } from './value/value'
 import { todo } from './todos/todos'
 import { message } from './message/message'
 import { user } from './users/users'
@@ -5,6 +6,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(value)
   app.configure(todo)
   app.configure(message)
   app.configure(user)
