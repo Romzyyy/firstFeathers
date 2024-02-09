@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { testClient } from './services/test/test.shared'
+export type { Test, TestData, TestQuery, TestPatch } from './services/test/test.shared'
+
 import { valueClient } from './services/value/value.shared'
 export type { Value, ValueData, ValueQuery, ValuePatch } from './services/value/value.shared'
 
@@ -46,5 +49,6 @@ export const createClient = <Configuration = any,>(
   client.configure(messageClient)
   client.configure(todoClient)
   client.configure(valueClient)
+  client.configure(testClient)
   return client
 }
