@@ -4,6 +4,17 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { mahasiswaClient } from './services/mahasiswa/mahasiswa.shared'
+export type {
+  Mahasiswa,
+  MahasiswaData,
+  MahasiswaQuery,
+  MahasiswaPatch
+} from './services/mahasiswa/mahasiswa.shared'
+
+import { nilaiClient } from './services/nilai/nilai.shared'
+export type { Nilai, NilaiData, NilaiQuery, NilaiPatch } from './services/nilai/nilai.shared'
+
 import { nilaiClient } from './services/nilai/nilai.shared'
 export type { Nilai, NilaiData, NilaiQuery, NilaiPatch } from './services/nilai/nilai.shared'
 
@@ -54,5 +65,7 @@ export const createClient = <Configuration = any,>(
   client.configure(valueClient)
   client.configure(testClient)
   client.configure(nilaiClient)
+  client.configure(nilaiClient)
+  client.configure(mahasiswaClient)
   return client
 }
