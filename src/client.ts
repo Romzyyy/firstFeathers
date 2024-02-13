@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { chatClient } from './services/chat/chat.shared'
+export type { Chat, ChatData, ChatQuery, ChatPatch } from './services/chat/chat.shared'
+
 import { mahasiswaClient } from './services/mahasiswa/mahasiswa.shared'
 export type {
   Mahasiswa,
@@ -67,5 +70,6 @@ export const createClient = <Configuration = any,>(
   client.configure(nilaiClient)
   client.configure(nilaiClient)
   client.configure(mahasiswaClient)
+  client.configure(chatClient)
   return client
 }
