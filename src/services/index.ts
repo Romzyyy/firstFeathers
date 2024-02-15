@@ -1,3 +1,4 @@
+import { student } from './student/student'
 import { profile } from './profile/profile'
 import { chat } from './chat/chat'
 import { mahasiswa } from './mahasiswa/mahasiswa'
@@ -11,6 +12,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(student)
   app.configure(profile)
   app.configure(chat)
   app.configure(mahasiswa)

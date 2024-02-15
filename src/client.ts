@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { studentClient } from './services/student/student.shared'
+export type { Student, StudentData, StudentQuery, StudentPatch } from './services/student/student.shared'
+
 import { profileClient } from './services/profile/profile.shared'
 export type { Profile, ProfileData, ProfileQuery, ProfilePatch } from './services/profile/profile.shared'
 
@@ -75,5 +78,6 @@ export const createClient = <Configuration = any,>(
   client.configure(mahasiswaClient)
   client.configure(chatClient)
   client.configure(profileClient)
+  client.configure(studentClient)
   return client
 }
