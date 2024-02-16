@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { cobaClient } from './services/coba/coba.shared'
+export type { Coba, CobaData, CobaQuery, CobaPatch } from './services/coba/coba.shared'
+
 import { studentClient } from './services/student/student.shared'
 export type { Student, StudentData, StudentQuery, StudentPatch } from './services/student/student.shared'
 
@@ -79,5 +82,6 @@ export const createClient = <Configuration = any,>(
   client.configure(chatClient)
   client.configure(profileClient)
   client.configure(studentClient)
+  client.configure(cobaClient)
   return client
 }
