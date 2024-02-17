@@ -1,3 +1,4 @@
+import { nama } from './nama/nama'
 import { coba } from './coba/coba'
 import { student } from './student/student'
 import { profile } from './profile/profile'
@@ -13,6 +14,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(nama)
   app.configure(coba)
   app.configure(student)
   app.configure(profile)

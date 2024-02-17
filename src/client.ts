@@ -4,6 +4,12 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { namaClient } from './services/nama/nama.shared'
+export type { Nama, NamaData, NamaQuery, NamaPatch } from './services/nama/nama.shared'
+
+import { tryClient } from './services/try/try.shared'
+export type { Try, TryData, TryQuery, TryPatch } from './services/try/try.shared'
+
 import { cobaClient } from './services/coba/coba.shared'
 export type { Coba, CobaData, CobaQuery, CobaPatch } from './services/coba/coba.shared'
 
@@ -83,5 +89,7 @@ export const createClient = <Configuration = any,>(
   client.configure(profileClient)
   client.configure(studentClient)
   client.configure(cobaClient)
+  client.configure(tryClient)
+  client.configure(namaClient)
   return client
 }
