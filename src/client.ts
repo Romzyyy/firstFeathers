@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { nothingClient } from './services/nothing/nothing.shared'
+export type { Nothing, NothingData, NothingQuery, NothingPatch } from './services/nothing/nothing.shared'
+
 import { inputClient } from './services/input/input.shared'
 export type { Input, InputData, InputQuery, InputPatch } from './services/input/input.shared'
 
@@ -95,5 +98,6 @@ export const createClient = <Configuration = any,>(
   client.configure(tryClient)
   client.configure(namaClient)
   client.configure(inputClient)
+  client.configure(nothingClient)
   return client
 }

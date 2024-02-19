@@ -1,3 +1,4 @@
+import { nothing } from './nothing/nothing'
 import { input } from './input/input'
 import { nama } from './nama/nama'
 import { coba } from './coba/coba'
@@ -15,6 +16,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(nothing)
   app.configure(input)
   app.configure(nama)
   app.configure(coba)
