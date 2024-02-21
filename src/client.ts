@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { firstClient } from './services/first/first.shared'
+export type { First, FirstData, FirstQuery, FirstPatch } from './services/first/first.shared'
+
 import { allnimalsClient } from './services/allnimals/allnimals.shared'
 export type {
   Allnimals,
@@ -108,5 +111,6 @@ export const createClient = <Configuration = any,>(
   client.configure(inputClient)
   client.configure(nothingClient)
   client.configure(allnimalsClient)
+  client.configure(firstClient)
   return client
 }

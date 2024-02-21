@@ -1,3 +1,4 @@
+import { first } from './first/first'
 import { allnimals } from './allnimals/allnimals'
 import { nothing } from './nothing/nothing'
 import { input } from './input/input'
@@ -17,6 +18,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(first)
   app.configure(allnimals)
   app.configure(nothing)
   app.configure(input)
