@@ -1,3 +1,4 @@
+import { seconds } from './seconds/seconds'
 import { first } from './first/first'
 import { allnimals } from './allnimals/allnimals'
 import { nothing } from './nothing/nothing'
@@ -18,6 +19,7 @@ import { user } from './users/users'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(seconds)
   app.configure(first)
   app.configure(allnimals)
   app.configure(nothing)

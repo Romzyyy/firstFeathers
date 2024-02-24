@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { secondsClient } from './services/seconds/seconds.shared'
+export type { Seconds, SecondsData, SecondsQuery, SecondsPatch } from './services/seconds/seconds.shared'
+
 import { firstClient } from './services/first/first.shared'
 export type { First, FirstData, FirstQuery, FirstPatch } from './services/first/first.shared'
 
@@ -112,5 +115,6 @@ export const createClient = <Configuration = any,>(
   client.configure(nothingClient)
   client.configure(allnimalsClient)
   client.configure(firstClient)
+  client.configure(secondsClient)
   return client
 }
